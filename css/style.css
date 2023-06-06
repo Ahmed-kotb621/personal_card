@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    color: #000;
+}
+
+.flip-container {
+    perspective: 1000px;
+}
+.front {
+    
+    background-image: url(../images/logo1.jpg);
+    background-size: cover;
+    box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.5);
+    z-index: 2;
+    transform: translateY(0deg);
+}
+
+.back {
+    display: flex;
+
+    box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.5);
+    transform:rotateY(180deg);
+
+}
+.back .image {
+    background-color: #000;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.back img {
+   width: 100px;
+   
+    
+}
+
+.flip-container, .front , .back {
+    height: 350px;
+    width: 600px;
+   
+}
+
+.flip-container:hover .flibber {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.flibber {
+    transition: 0.5s;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.front , .back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.back .info {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.back .info h1 {
+    font-size: 40px;
+
+}
+
+.back .info p {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom:2px solid #000 ;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: fit-content;
+
+}
+
+.back .info .icon-groub {
+    margin-top: 5px;
+}
+
+.back .info .icon-groub .bold {
+    margin-right: 5px;
+}
+
+.back .info .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back .info .links i{
+    font-size: 25px;
+    color: black;  
+    z-index: 2;
+}
+
+.back .info .links a {  
+    border: 2px solid #000;  
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+    position: relative;     
+   
+}
+
+.back .info .links a:hover{
+    background-color: #000;
+}
+
+.back .info .links a:hover i{
+    color: #fff;
+}
+
+
+
