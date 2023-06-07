@@ -14,6 +14,8 @@ body {
 .flip-container {
     perspective: 1000px;
 }
+
+/* main front container*/ 
 .front {
     
     background-image: url(../images/logo1.jpg);
