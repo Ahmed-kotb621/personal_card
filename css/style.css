@@ -10,7 +10,7 @@ body {
     min-height: 90vh;
     color: #000;
 }
-
+/* main container*/ 
 .flip-container {
     perspective: 1000px;
 }
