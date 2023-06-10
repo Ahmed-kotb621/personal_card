@@ -1,6 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root {
+    --main-color:#000;
 }
 body {
     font-family: 'Cairo', sans-serif;
@@ -8,45 +14,60 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 90vh;
-    color: #000;
+    color:var(--main-color);
+    height: 100vh;
+    position: relative;
 }
-/* main container*/ 
+ 
 .flip-container {
     perspective: 1000px;
 }
-
-/* main front container*/ 
+ 
 .front {
-    
-    background-image: url(../images/logo1.jpg);
     background-size: cover;
     box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.5);
     z-index: 2;
     transform: translateY(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
 }
 
+.front img {
+   width: 100%;
+  height: 80%;
+}
 .back {
     display: flex;
-
     box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.5);
     transform:rotateY(180deg);
-
 }
+
 .back .image {
-    background-color: #000;
+    background-color: var(--main-color);
     padding-left: 15px;
     padding-right: 15px;
 }
 .back img {
-   width: 100px;
-   
-    
+   width: 100px; 
 }
 
 .flip-container, .front , .back {
     height: 350px;
     width: 600px;
-   
+}
+
+@media (max-width:768px) {
+    .flip-container, .front , .back {
+        height: 300px;
+        width: 400px;
+    }
+    .back img {
+        width: 80px; 
+     }
+     
+    
 }
 
 .flip-container:hover .flibber {
@@ -72,13 +93,23 @@ body {
 
 .back .info h1 {
     font-size: 40px;
-
 }
 
+@media (max-width:768px) {
+    .back .info h1 {
+        font-size: 30px;
+        margin: 10px 0 10px;
+    }
+    .back .info p {
+        font-size: 16px;
+        border-bottom:1px solid var(--main-color) ;
+    
+    }
+}
 .back .info p {
     font-size: 18px;
     font-weight: bold;
-    border-bottom:2px solid #000 ;
+    border-bottom:2px solid var(--main-color) ;
     padding-bottom: 10px;
     margin-bottom: 20px;
     width: fit-content;
@@ -103,12 +134,12 @@ body {
 
 .back .info .links i{
     font-size: 25px;
-    color: black;  
+    color: var(--main-color);  
     z-index: 2;
 }
 
 .back .info .links a {  
-    border: 2px solid #000;  
+    border: 2px solid var(--main-color) ; 
     padding: 5px;
     margin-right: 10px;
     margin-top: 15px;
@@ -117,7 +148,7 @@ body {
 }
 
 .back .info .links a:hover{
-    background-color: #000;
+    background-color: var(--main-color);
 }
 
 .back .info .links a:hover i{
